@@ -39,12 +39,12 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  counter = 0
   new_cart = []
-    while counter < cart.length
-      consolidate_cart(cart)
-    end
-      new_cart
+    consolidate_cart(cart)
+  end
+    counter = 0
+    while counter < new_cart.length
+      apply_clearance(new_cart)
       binding.pry
     end
   counter += 1
