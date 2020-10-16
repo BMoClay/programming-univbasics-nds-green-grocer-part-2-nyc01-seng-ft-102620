@@ -29,23 +29,23 @@ end
 
 def apply_clearance(cart)
   counter = 0
-  #clearance_item = cart[counter][:clearance] = true
-  if cart[counter][:clearance => true]
-    cart[counter][:price]*.8 = cart[counter][:price]
+  while counter < cart.length
+    if cart[counter][:clearance ]
+      cart[counter][:price] = (cart[counter][:price] - (cart[counter][:price] * 0.20)).round(2)
+    end
+    counter += 1
   end
-  binding.pry
-  counter += 1
-
+  cart
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  counter = 0
+  new_cart = []
+    while counter < cart.length
+      consolidate_cart(cart)
+    end
+      new_cart
+      binding.pry
+    end
+  counter += 1
 end
